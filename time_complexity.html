@@ -1,0 +1,649 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>time_complex</title><link href='https://fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.googleapis.com/css?family=Lato:900,300&subset=latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; padding-bottom: 70px; white-space: pre-wrap; overflow-x: visible; }
+.first-line-indent #write p .md-line { text-indent: 0px; }
+.first-line-indent #write li, .first-line-indent #write p, .first-line-indent #write p .md-line:first-child { text-indent: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write > blockquote:first-child, #write > div:first-child, #write > figure:first-child, #write > ol:first-child, #write > p:first-child, #write > pre:first-child, #write > ul:first-child { margin-top: 30px; }
+#write li > figure:first-child { margin-top: -20px; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+h1, h2, h3, h4, h5, h6 { margin-top: 1rem; margin-bottom: 1rem; }
+p { -webkit-margin-before: 1rem; -webkit-margin-after: 1rem; -webkit-margin-start: 0px; -webkit-margin-end: 0px; }
+.mathjax-block { margin-top: 0px; margin-bottom: 0px; -webkit-margin-before: 0px; -webkit-margin-after: 0px; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.701961); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 80px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+pre { white-space: pre-wrap; }
+pre.contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit inherit; background-repeat: inherit inherit; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+.md-fences.mock-cm { white-space: pre-wrap; }
+.show-fences-line-number .md-fences { padding-left: 0px; }
+.show-fences-line-number .md-fences.mock-cm { padding-left: 40px; }
+.CodeMirror-line { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; background-repeat: initial initial; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+.footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid-page; break-before: avoid-page; }
+  #write { margin-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 1cm; padding-right: 1cm; padding-bottom: 0px; break-after: avoid-page; }
+  .typora-export #write::after { height: 0px; }
+  @page { margin: 20mm 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
+p > img:only-child { display: block; margin: auto; }
+.md-line > .md-image:only-child, p > .md-image:only-child { display: inline-block; width: 100%; text-align: center; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.mathjax-block { white-space: pre; overflow: hidden; width: 100%; }
+p + .mathjax-block { margin-top: -1.143rem; }
+.mathjax-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, tt { font-family: var(--monospace); }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.mathjax-block .MathJax_SVG_Display { text-align: center; margin: 1em 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: monospace; }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext);
+@include-when-export url(https://fonts.googleapis.com/css?family=Lato:900,300&subset=latin-ext);
+
+:root {
+	--control-text-color: #777;
+}
+
+/**
+ * forked from pixyll.com
+ * MIT license
+ */
+
+@charset "UTF-8";
+@font-face {
+	font-family: 'Merriweather';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Merriweather Light'), local('Merriweather-Light'), url(file:///Users/huaiwen/Library/Application%20Support/abnerworks.Typora/themes/pixyll/Merriweather-Light.ttf);
+}
+@font-face {
+	font-family: 'Merriweather';
+	font-style: normal;
+	font-weight: 900;
+	src: local('Merriweather Heavy'), local('Merriweather-Heavy'), url(file:///Users/huaiwen/Library/Application%20Support/abnerworks.Typora/themes/pixyll/Merriweather-Bold.ttf);
+}
+@font-face {
+	font-family: 'Merriweather';
+	font-style: italic;
+	font-weight: 300;
+	src: local('Merriweather Light Italic'), local('Merriweather-LightItalic'), url(file:///Users/huaiwen/Library/Application%20Support/abnerworks.Typora/themes/pixyll/Merriweather-LightItalic.ttf);
+}
+@font-face {
+	font-family: 'Merriweather';
+	font-style: italic;
+	font-weight: 900;
+	src: local('Merriweather Heavy Italic'), local('Merriweather-HeavyItalic'), url(file:///Users/huaiwen/Library/Application%20Support/abnerworks.Typora/themes/pixyll/Merriweather-BoldItalic.ttf);
+}
+
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Lato Light'), local('Lato-Light'), url(file:///Users/huaiwen/Library/Application%20Support/abnerworks.Typora/themes/pixyll/Lato-Light.ttf);
+}
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 900;
+	src: local('Lato Black'), local('Lato-Blcak'), url(file:///Users/huaiwen/Library/Application%20Support/abnerworks.Typora/themes/pixyll/Lato-Black.ttf);
+}
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: bold;
+	src: local('Lato Black'), local('Lato-Blcak'), url(file:///Users/huaiwen/Library/Application%20Support/abnerworks.Typora/themes/pixyll/Lato-Black.ttf);
+}
+@font-face {
+	font-family: 'Lato';
+	font-style: italic;
+	font-weight: 900;
+	src: local('Lato BlackItalic'), local('Lato-BlackItalic'), url(file:///Users/huaiwen/Library/Application%20Support/abnerworks.Typora/themes/pixyll/Lato-BlackItalic.ttf);
+}
+@font-face {
+	font-family: 'Lato';
+	font-style: italic;
+	font-weight: bold;
+	src: local('Lato BlackItalic'), local('Lato-BlackItalic'), url(file:///Users/huaiwen/Library/Application%20Support/abnerworks.Typora/themes/pixyll/Lato-BlackItalic.ttf);
+}
+
+h1,
+.h1,
+.f1 {
+	font-size: 2rem;
+	line-height: 2.5rem;
+}
+h2,
+.h2,
+.f2 {
+	font-size: 1.5rem;
+	line-height: 2rem;
+}
+h3,
+.h3,
+.f3 {
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+}
+p,
+.p,
+.f4,
+h4,
+h5,
+h6,
+dl,
+ol,
+ul,
+pre[cid],
+div[cid],
+#typora-source {
+	font-size: 1.125rem;
+	line-height: 1.5rem;
+}
+
+h4 {
+	font-size: 1.13rem;
+}
+/*
+ Pixyll
+ A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff.
+ Best served with BASSCSS (http://jxnblk.github.io/basscss)
+ Crafted with <3 by John Otander (@4lpine) - ©2015 John Otander MIT License http://opensource.org/licenses/MIT
+
+*/
+
+body {
+	font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman", "STSong", Serif;
+	line-height: 1.5rem;
+	font-weight: 400;
+}
+
+#write {
+	max-width: 914px;
+	color: #333;
+}
+
+img {
+	width: auto;
+	max-width: 100%;
+}
+body {
+	font-size: 1.5rem;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+.ty-table-edit {
+	background: #ededed;
+}
+
+table {
+	width: 100%;
+	font-size: 1.125rem;
+}
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td,
+table > tfoot > tr > th,
+table > tfoot > tr > td {
+	padding: 12px;
+	line-height: 1.2;
+	vertical-align: top;
+	border-top: 1px solid #333;
+}
+table > thead > tr > th {
+	vertical-align: bottom;
+	border-bottom: 2px solid #333;
+}
+table > caption + thead > tr:first-child > th,
+table > caption + thead > tr:first-child > td,
+table > colgroup + thead > tr:first-child > th,
+table > colgroup + thead > tr:first-child > td,
+table > thead:first-child > tr:first-child > th,
+table > thead:first-child > tr:first-child > td {
+	border-top: 0;
+}
+table > tbody + tbody {
+	border-top: 2px solid #333;
+}
+p {
+	font-weight: 300;
+	line-height: 1.5;
+}
+abbr {
+	border-bottom: 1px black dotted;
+	cursor: help;
+}
+pre,
+code {
+	font-family: Menlo, Monaco, "Courier New", monospace;
+}
+
+code,
+.md-fences  {
+	color: #7a7a7a;
+}
+
+.md-fences .CodeMirror.CodeMirror-wrap {
+	top: -1.5em;
+    margin-bottom: -1.5em;
+}
+
+.md-fences {
+	padding: 1.125em;
+	margin-bottom: 0.88em;
+	font-size: 1rem;
+	border: 1px solid #7a7a7a;
+}
+
+blockquote {
+	padding: 1.33em;
+	font-style: italic;
+	border-left: 5px solid #7a7a7a;
+	color: #555;
+}
+blockquote em {
+	color: #000;
+}
+blockquote footer {
+	font-size: .85rem;
+	font-style: normal;
+	background-color: #fff;
+	color: #7a7a7a;
+	border-color: transparent;
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+	font-family: "Lato", 'Helvetica Neue', Helvetica, sans-serif;
+	font-weight: 900;
+	line-height: 1.2;
+	margin: 1em 0 0.5em;
+}
+@media screen and (min-width: 48em) {
+	.h1,
+	h1 {
+		font-size: 3.250rem;
+	}
+	.h2,
+	h2 {
+		font-size: 2.298rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.625rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.3rem;
+	}
+	#write>h4.md-focus:before,
+	#write>h5.md-focus:before,
+	#write>h6.md-focus:before{
+		top: 1px;
+	}
+	.p,
+	p,
+	li {
+		font-size: 1.25rem;
+		line-height: 1.8;
+	}
+	table {
+		font-size: 1.25rem;
+	}
+}
+@media (max-width: 48em) {
+	blockquote {
+		margin-left: 1rem;
+		margin-right: 0;
+		padding: 0.5em;
+	}
+	.h1,
+	h1 {
+		font-size: 2.827rem;
+	}
+	.h2,
+	h2 {
+		font-size: 1.999rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.413rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.3rem;
+	}
+}
+@media screen and (min-width: 64em) {
+	.h1,
+	h1 {
+		font-size: 4.498rem;
+	}
+	.h2,
+	h2 {
+		font-size: 2.29rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.9rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.591rem;
+	}
+	#write>h4.md-focus:before{
+		top:4px;
+	}
+}
+a {
+	color: #463F5C;
+	text-decoration: underline;
+}
+
+#write {
+	padding-top: 2rem;
+}
+
+#write pre.md-meta-block {
+	min-height: 35px;
+	padding: 0.5em 1em;
+	white-space: pre;
+	border: 0px;
+
+	border-left: 30px #f8f8f8 solid;
+	border-right: 30px #f8f8f8 solid;
+	width: 100vw;
+	max-width: calc(100% + 60px);
+
+	margin-left: -30px;
+	margin-bottom: 2em;
+	margin-top: -2010px;
+	padding-top: 2000px;
+	padding-bottom: 10px;
+	line-height: 1.5em;
+	color: #7a7a7a;
+	background-color: #fafafa;
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+	font-weight: 300;
+	clear: both;
+	padding-left: 0;
+	font-size:1.125rem;
+}
+.md-image>.md-meta {
+	color: #463F5C
+}
+.footnotes {
+	font-size:1.1rem;
+}
+.md-tag {
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+}
+.code-tooltip {
+	background: white;
+}
+.code-tooltip-content {
+	font-size: 1.1rem;
+}
+
+.task-list{
+	padding-left: 0;
+}
+
+.md-task-list-item {
+	padding-left:34px;
+}
+
+.md-task-list-item > input{
+	width: 1.25rem;
+	height: 1.25rem;
+	display: block;
+	-webkit-appearance: initial;
+	top: -2px;
+	margin-left: -1.6em;
+    margin-top: calc(1rem - 7px);
+}
+
+.md-task-list-item > input:focus{
+	outline: none;
+	box-shadow: none;
+}
+
+.md-task-list-item > input:before{
+	border: 1px solid #555;
+	border-radius: 1.5rem;
+	width: 1.5rem;
+	height: 1.5rem;
+	background: #fff;
+	content: ' ';
+	transition: background-color 200ms ease-in-out;
+	display: block;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	background: #333;
+	border-width: 2px;
+	display:inline-block;
+	transition: background-color 200ms ease-in-out;
+}
+
+.md-task-list-item > input:checked:after,
+.md-task-list-item > input[checked]:after {
+	opacity: 1;
+}
+
+.md-task-list-item > input:after {
+	opacity: 1;
+	-webkit-transition: opacity 0.05s ease-in-out;
+	-moz-transition: opacity 0.05s ease-in-out;
+	transition: opacity 0.05s ease-in-out;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	position: absolute;
+	top: 0.4375rem;
+	left: 0.28125rem;
+	width: 0.9375rem;
+	height: 0.5rem;
+	border: 3px solid #fff;
+	border-top: 0;
+	border-right: 0;
+	content: ' ';
+	opacity: 0;
+}
+
+.md-tag {
+	color:inherit;
+}
+
+.md-toc:focus .md-toc-content{
+	margin-top: 19px;
+}
+
+#typora-sidebar {
+	font-size:1rem !important;
+}
+
+.html-for-mac #typora-sidebar {
+	background-color:white;
+}
+
+.outline-content li, .outline-content ul {
+	font-size:1rem !important;
+}
+
+.outline-title {
+	line-height: inherit;
+	margin-top: 10px;
+}
+
+.outline-expander {
+	width: 18px;
+}
+
+.outline-expander:before {
+ 	content: "+";
+	font-family: inherit;
+	color: rgb(108, 108, 108); 
+  	font-size: 1.5rem;
+ 	top: 0.1rem;
+}
+
+.outline-expander:hover:before {
+	content: "+";
+}
+
+.outline-item-open>.outline-item>.outline-expander:before{
+	content: "-";
+}
+
+/** source code mode */
+#typora-source {
+	font-family: Courier, monospace;
+    color: #6A6A6A;
+}
+
+.os-windows #typora-source {
+	font-family: inherit;
+}
+
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property,
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+	color: #428bca;
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+	color: #777777;
+}
+
+.preference-item-hint {
+	margin-top: 16px;
+}
+
+.md-diagram-panel {
+	margin-top: 24px;
+	margin-left: -1.2em;
+}
+
+
+</style>
+</head>
+<body class='typora-export' >
+<div  id='write'  class = 'is-mac show-fences-line-number'><h4><a name='header-n0' class='md-header-anchor '></a>Time Complexity</h4><p>&nbsp;</p><p>Given a corpus <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-1-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.238ex" height="2.013ex" viewBox="0 -778.3 533 866.5" role="img" focusable="false" style="vertical-align: -0.205ex;"><defs><path stroke-width="0" id="E1-MJCAL-43" d="M201 -25Q167 -25 136 -14T75 23T29 94T12 202Q12 290 50 394T161 574Q227 642 303 673T433 704Q435 705 457 705Q533 701 533 640Q533 606 507 548T464 474Q431 444 396 444Q381 444 381 453Q381 459 388 473T407 513T428 563Q433 580 433 594Q433 636 381 636Q314 636 260 594T175 489T128 363T112 247Q112 157 153 101T273 44Q347 44 398 121Q413 144 437 157T481 171Q496 171 496 160Q496 150 476 123Q426 56 350 16T201 -25Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E1-MJCAL-43" x="0" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-1">\mathcal{C}</script>,  the time complex can be computed as</p><h5><a name='header-n205' class='md-header-anchor '></a>Concept Extraction             <br/></h5><ul><li>Frequent pattern mining: Since the operation of Hash table is <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-2-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="4.74ex" height="2.614ex" viewBox="0 -821.4 2041 1125.3" role="img" focusable="false" style="vertical-align: -0.706ex;"><defs><path stroke-width="0" id="E2-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E2-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E2-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path stroke-width="0" id="E2-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E2-MJMATHI-4F" x="0" y="0"></use><use xlink:href="#E2-MJMAIN-28" x="763" y="0"></use><use xlink:href="#E2-MJMAIN-31" x="1152" y="0"></use><use xlink:href="#E2-MJMAIN-29" x="1652" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-2">O(1)</script>, both the time and space complexities are <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-3-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="7.771ex" height="2.614ex" viewBox="0 -821.4 3346 1125.3" role="img" focusable="false" style="vertical-align: -0.706ex;"><defs><path stroke-width="0" id="E3-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E3-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E3-MJMATHI-77" d="M580 385Q580 406 599 424T641 443Q659 443 674 425T690 368Q690 339 671 253Q656 197 644 161T609 80T554 12T482 -11Q438 -11 404 5T355 48Q354 47 352 44Q311 -11 252 -11Q226 -11 202 -5T155 14T118 53T104 116Q104 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 293 29 315T52 366T96 418T161 441Q204 441 227 416T250 358Q250 340 217 250T184 111Q184 65 205 46T258 26Q301 26 334 87L339 96V119Q339 122 339 128T340 136T341 143T342 152T345 165T348 182T354 206T362 238T373 281Q402 395 406 404Q419 431 449 431Q468 431 475 421T483 402Q483 389 454 274T422 142Q420 131 420 107V100Q420 85 423 71T442 42T487 26Q558 26 600 148Q609 171 620 213T632 273Q632 306 619 325T593 357T580 385Z"></path><path stroke-width="0" id="E3-MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path><path stroke-width="0" id="E3-MJCAL-43" d="M201 -25Q167 -25 136 -14T75 23T29 94T12 202Q12 290 50 394T161 574Q227 642 303 673T433 704Q435 705 457 705Q533 701 533 640Q533 606 507 548T464 474Q431 444 396 444Q381 444 381 453Q381 459 388 473T407 513T428 563Q433 580 433 594Q433 636 381 636Q314 636 260 594T175 489T128 363T112 247Q112 157 153 101T273 44Q347 44 398 121Q413 144 437 157T481 171Q496 171 496 160Q496 150 476 123Q426 56 350 16T201 -25Z"></path><path stroke-width="0" id="E3-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E3-MJMATHI-4F" x="0" y="0"></use><use xlink:href="#E3-MJMAIN-28" x="763" y="0"></use><use xlink:href="#E3-MJMATHI-77" x="1152" y="0"></use><use xlink:href="#E3-MJMAIN-7C" x="1868" y="0"></use><use xlink:href="#E3-MJCAL-43" x="2146" y="0"></use><use xlink:href="#E3-MJMAIN-7C" x="2679" y="0"></use><use xlink:href="#E3-MJMAIN-29" x="2957" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-3">O(w|\mathcal{C}|)</script>. <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-8-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.663ex" height="1.412ex" viewBox="0 -519.5 716 607.8" role="img" focusable="false" style="vertical-align: -0.205ex;"><defs><path stroke-width="0" id="E8-MJMATHI-77" d="M580 385Q580 406 599 424T641 443Q659 443 674 425T690 368Q690 339 671 253Q656 197 644 161T609 80T554 12T482 -11Q438 -11 404 5T355 48Q354 47 352 44Q311 -11 252 -11Q226 -11 202 -5T155 14T118 53T104 116Q104 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 293 29 315T52 366T96 418T161 441Q204 441 227 416T250 358Q250 340 217 250T184 111Q184 65 205 46T258 26Q301 26 334 87L339 96V119Q339 122 339 128T340 136T341 143T342 152T345 165T348 182T354 206T362 238T373 281Q402 395 406 404Q419 431 449 431Q468 431 475 421T483 402Q483 389 454 274T422 142Q420 131 420 107V100Q420 85 423 71T442 42T487 26Q558 26 600 148Q609 171 620 213T632 273Q632 306 619 325T593 357T580 385Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E8-MJMATHI-77" x="0" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-8">w</script> is a small constant indicating the maximum phrase length, so this step is linear to the size of corpus <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-5-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.529ex" height="2.614ex" viewBox="0 -821.4 1089 1125.3" role="img" focusable="false" style="vertical-align: -0.706ex;"><defs><path stroke-width="0" id="E5-MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path><path stroke-width="0" id="E5-MJCAL-43" d="M201 -25Q167 -25 136 -14T75 23T29 94T12 202Q12 290 50 394T161 574Q227 642 303 673T433 704Q435 705 457 705Q533 701 533 640Q533 606 507 548T464 474Q431 444 396 444Q381 444 381 453Q381 459 388 473T407 513T428 563Q433 580 433 594Q433 636 381 636Q314 636 260 594T175 489T128 363T112 247Q112 157 153 101T273 44Q347 44 398 121Q413 144 437 157T481 171Q496 171 496 160Q496 150 476 123Q426 56 350 16T201 -25Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E5-MJMAIN-7C" x="0" y="0"></use><use xlink:href="#E5-MJCAL-43" x="278" y="0"></use><use xlink:href="#E5-MJMAIN-7C" x="811" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-5">|\mathcal{C}|</script>. </li></ul><ul><li>Feature Extraction: When extracting features, we take the advantage of the Aho-Corasick Automaton algorithm and tailor it to ﬁnd all the occurrences of phrase candidates. The time complexity is <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-6-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="12.513ex" height="2.714ex" viewBox="0 -864.5 5387.4 1168.4" role="img" focusable="false" style="vertical-align: -0.706ex;"><defs><path stroke-width="0" id="E6-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E6-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E6-MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path><path stroke-width="0" id="E6-MJCAL-43" d="M201 -25Q167 -25 136 -14T75 23T29 94T12 202Q12 290 50 394T161 574Q227 642 303 673T433 704Q435 705 457 705Q533 701 533 640Q533 606 507 548T464 474Q431 444 396 444Q381 444 381 453Q381 459 388 473T407 513T428 563Q433 580 433 594Q433 636 381 636Q314 636 260 594T175 489T128 363T112 247Q112 157 153 101T273 44Q347 44 398 121Q413 144 437 157T481 171Q496 171 496 160Q496 150 476 123Q426 56 350 16T201 -25Z"></path><path stroke-width="0" id="E6-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path stroke-width="0" id="E6-MJCAL-4E" d="M343 705Q358 705 358 698Q360 696 370 658T411 524T484 319Q536 174 590 82L595 73L615 152Q646 274 683 407Q729 571 752 637T799 727Q852 780 937 788Q939 788 947 788T958 789H962Q979 789 979 765Q979 722 951 692Q942 683 924 683Q888 681 859 672T818 654T803 639Q784 608 708 322T631 15Q631 14 630 15Q630 17 629 15Q628 14 628 12Q621 -4 601 -17T560 -31Q550 -31 546 -28T530 -7Q484 67 458 123T398 272Q352 392 314 514L306 535V534Q306 533 296 488T272 379T234 239T185 100T127 -7T61 -50Q34 -50 4 -34T-27 8Q-27 33 -12 61T18 90Q21 90 36 77T87 57H92Q109 57 123 78T162 173Q206 299 232 417T265 599T276 667Q284 681 304 693T343 705Z"></path><path stroke-width="0" id="E6-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E6-MJMATHI-4F" x="0" y="0"></use><use xlink:href="#E6-MJMAIN-28" x="763" y="0"></use><use xlink:href="#E6-MJMAIN-7C" x="1152" y="0"></use><use xlink:href="#E6-MJCAL-43" x="1430" y="0"></use><use xlink:href="#E6-MJMAIN-7C" x="1963" y="0"></use><use xlink:href="#E6-MJMAIN-2B" x="2463" y="0"></use><use xlink:href="#E6-MJMAIN-7C" x="3463" y="0"></use><use xlink:href="#E6-MJCAL-4E" x="3741" y="0"></use><use xlink:href="#E6-MJMAIN-7C" x="4720" y="0"></use><use xlink:href="#E6-MJMAIN-29" x="4998" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-6">O(|\mathcal{C}| + |\mathcal{N}|)</script>  where <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-7-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="3.565ex" height="2.714ex" viewBox="0 -864.5 1535 1168.4" role="img" focusable="false" style="vertical-align: -0.706ex;"><defs><path stroke-width="0" id="E7-MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path><path stroke-width="0" id="E7-MJCAL-4E" d="M343 705Q358 705 358 698Q360 696 370 658T411 524T484 319Q536 174 590 82L595 73L615 152Q646 274 683 407Q729 571 752 637T799 727Q852 780 937 788Q939 788 947 788T958 789H962Q979 789 979 765Q979 722 951 692Q942 683 924 683Q888 681 859 672T818 654T803 639Q784 608 708 322T631 15Q631 14 630 15Q630 17 629 15Q628 14 628 12Q621 -4 601 -17T560 -31Q550 -31 546 -28T530 -7Q484 67 458 123T398 272Q352 392 314 514L306 535V534Q306 533 296 488T272 379T234 239T185 100T127 -7T61 -50Q34 -50 4 -34T-27 8Q-27 33 -12 61T18 90Q21 90 36 77T87 57H92Q109 57 123 78T162 173Q206 299 232 417T265 599T276 667Q284 681 304 693T343 705Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E7-MJMAIN-7C" x="0" y="0"></use><use xlink:href="#E7-MJCAL-4E" x="278" y="0"></use><use xlink:href="#E7-MJMAIN-7C" x="1257" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-7">|\mathcal{N}|</script> refers to the total number of frequent concept candidates. As the length of each candidate is limited by a constant <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-8-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.663ex" height="1.412ex" viewBox="0 -519.5 716 607.8" role="img" focusable="false" style="vertical-align: -0.205ex;"><defs><path stroke-width="0" id="E8-MJMATHI-77" d="M580 385Q580 406 599 424T641 443Q659 443 674 425T690 368Q690 339 671 253Q656 197 644 161T609 80T554 12T482 -11Q438 -11 404 5T355 48Q354 47 352 44Q311 -11 252 -11Q226 -11 202 -5T155 14T118 53T104 116Q104 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 293 29 315T52 366T96 418T161 441Q204 441 227 416T250 358Q250 340 217 250T184 111Q184 65 205 46T258 26Q301 26 334 87L339 96V119Q339 122 339 128T340 136T341 143T342 152T345 165T348 182T354 206T362 238T373 281Q402 395 406 404Q419 431 449 431Q468 431 475 421T483 402Q483 389 454 274T422 142Q420 131 420 107V100Q420 85 423 71T442 42T487 26Q558 26 600 148Q609 171 620 213T632 273Q632 306 619 325T593 357T580 385Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E8-MJMATHI-77" x="0" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-8">w</script>, <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-9-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="7.144ex" height="2.714ex" viewBox="0 -864.5 3076 1168.4" role="img" focusable="false" style="vertical-align: -0.706ex;"><defs><path stroke-width="0" id="E9-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E9-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E9-MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path><path stroke-width="0" id="E9-MJCAL-4E" d="M343 705Q358 705 358 698Q360 696 370 658T411 524T484 319Q536 174 590 82L595 73L615 152Q646 274 683 407Q729 571 752 637T799 727Q852 780 937 788Q939 788 947 788T958 789H962Q979 789 979 765Q979 722 951 692Q942 683 924 683Q888 681 859 672T818 654T803 639Q784 608 708 322T631 15Q631 14 630 15Q630 17 629 15Q628 14 628 12Q621 -4 601 -17T560 -31Q550 -31 546 -28T530 -7Q484 67 458 123T398 272Q352 392 314 514L306 535V534Q306 533 296 488T272 379T234 239T185 100T127 -7T61 -50Q34 -50 4 -34T-27 8Q-27 33 -12 61T18 90Q21 90 36 77T87 57H92Q109 57 123 78T162 173Q206 299 232 417T265 599T276 667Q284 681 304 693T343 705Z"></path><path stroke-width="0" id="E9-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E9-MJMATHI-4F" x="0" y="0"></use><use xlink:href="#E9-MJMAIN-28" x="763" y="0"></use><use xlink:href="#E9-MJMAIN-7C" x="1152" y="0"></use><use xlink:href="#E9-MJCAL-4E" x="1430" y="0"></use><use xlink:href="#E9-MJMAIN-7C" x="2409" y="0"></use><use xlink:href="#E9-MJMAIN-29" x="2687" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-9">O(|\mathcal{N}|)</script> &lt; <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-17-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="6.108ex" height="2.614ex" viewBox="0 -821.4 2630 1125.3" role="img" focusable="false" style="vertical-align: -0.706ex;"><defs><path stroke-width="0" id="E17-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E17-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E17-MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path><path stroke-width="0" id="E17-MJCAL-43" d="M201 -25Q167 -25 136 -14T75 23T29 94T12 202Q12 290 50 394T161 574Q227 642 303 673T433 704Q435 705 457 705Q533 701 533 640Q533 606 507 548T464 474Q431 444 396 444Q381 444 381 453Q381 459 388 473T407 513T428 563Q433 580 433 594Q433 636 381 636Q314 636 260 594T175 489T128 363T112 247Q112 157 153 101T273 44Q347 44 398 121Q413 144 437 157T481 171Q496 171 496 160Q496 150 476 123Q426 56 350 16T201 -25Z"></path><path stroke-width="0" id="E17-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E17-MJMATHI-4F" x="0" y="0"></use><use xlink:href="#E17-MJMAIN-28" x="763" y="0"></use><use xlink:href="#E17-MJMAIN-7C" x="1152" y="0"></use><use xlink:href="#E17-MJCAL-43" x="1430" y="0"></use><use xlink:href="#E17-MJMAIN-7C" x="1963" y="0"></use><use xlink:href="#E17-MJMAIN-29" x="2241" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-17">O(|\mathcal{C}|)</script> , so the complexity is <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-17-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="6.108ex" height="2.614ex" viewBox="0 -821.4 2630 1125.3" role="img" focusable="false" style="vertical-align: -0.706ex;"><defs><path stroke-width="0" id="E17-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E17-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E17-MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path><path stroke-width="0" id="E17-MJCAL-43" d="M201 -25Q167 -25 136 -14T75 23T29 94T12 202Q12 290 50 394T161 574Q227 642 303 673T433 704Q435 705 457 705Q533 701 533 640Q533 606 507 548T464 474Q431 444 396 444Q381 444 381 453Q381 459 388 473T407 513T428 563Q433 580 433 594Q433 636 381 636Q314 636 260 594T175 489T128 363T112 247Q112 157 153 101T273 44Q347 44 398 121Q413 144 437 157T481 171Q496 171 496 160Q496 150 476 123Q426 56 350 16T201 -25Z"></path><path stroke-width="0" id="E17-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E17-MJMATHI-4F" x="0" y="0"></use><use xlink:href="#E17-MJMAIN-28" x="763" y="0"></use><use xlink:href="#E17-MJMAIN-7C" x="1152" y="0"></use><use xlink:href="#E17-MJCAL-43" x="1430" y="0"></use><use xlink:href="#E17-MJMAIN-7C" x="1963" y="0"></use><use xlink:href="#E17-MJMAIN-29" x="2241" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-17">O(|\mathcal{C}|)</script>.</li></ul><ul><li>Concept Quality Estimation: As we only labeled a very small set of concept candidates, as long as the number and depth of decision trees in the random forest are some constant, the training time for the classiﬁer is very small compared to other parts. For the prediction stage, it is proportional to the size of concept candidates and the dimensions of features. Therefore, it could be <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-17-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="6.108ex" height="2.614ex" viewBox="0 -821.4 2630 1125.3" role="img" focusable="false" style="vertical-align: -0.706ex;"><defs><path stroke-width="0" id="E17-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E17-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E17-MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path><path stroke-width="0" id="E17-MJCAL-43" d="M201 -25Q167 -25 136 -14T75 23T29 94T12 202Q12 290 50 394T161 574Q227 642 303 673T433 704Q435 705 457 705Q533 701 533 640Q533 606 507 548T464 474Q431 444 396 444Q381 444 381 453Q381 459 388 473T407 513T428 563Q433 580 433 594Q433 636 381 636Q314 636 260 594T175 489T128 363T112 247Q112 157 153 101T273 44Q347 44 398 121Q413 144 437 157T481 171Q496 171 496 160Q496 150 476 123Q426 56 350 16T201 -25Z"></path><path stroke-width="0" id="E17-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E17-MJMATHI-4F" x="0" y="0"></use><use xlink:href="#E17-MJMAIN-28" x="763" y="0"></use><use xlink:href="#E17-MJMAIN-7C" x="1152" y="0"></use><use xlink:href="#E17-MJCAL-43" x="1430" y="0"></use><use xlink:href="#E17-MJMAIN-7C" x="1963" y="0"></use><use xlink:href="#E17-MJMAIN-29" x="2241" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-17">O(|\mathcal{C}|)</script> in time, although the actual magnitude might be smaller. </li></ul><p>So the total concept extraction costs <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-17-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="6.108ex" height="2.614ex" viewBox="0 -821.4 2630 1125.3" role="img" focusable="false" style="vertical-align: -0.706ex;"><defs><path stroke-width="0" id="E17-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E17-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E17-MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path><path stroke-width="0" id="E17-MJCAL-43" d="M201 -25Q167 -25 136 -14T75 23T29 94T12 202Q12 290 50 394T161 574Q227 642 303 673T433 704Q435 705 457 705Q533 701 533 640Q533 606 507 548T464 474Q431 444 396 444Q381 444 381 453Q381 459 388 473T407 513T428 563Q433 580 433 594Q433 636 381 636Q314 636 260 594T175 489T128 363T112 247Q112 157 153 101T273 44Q347 44 398 121Q413 144 437 157T481 171Q496 171 496 160Q496 150 476 123Q426 56 350 16T201 -25Z"></path><path stroke-width="0" id="E17-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E17-MJMATHI-4F" x="0" y="0"></use><use xlink:href="#E17-MJMAIN-28" x="763" y="0"></use><use xlink:href="#E17-MJMAIN-7C" x="1152" y="0"></use><use xlink:href="#E17-MJCAL-43" x="1430" y="0"></use><use xlink:href="#E17-MJMAIN-7C" x="1963" y="0"></use><use xlink:href="#E17-MJMAIN-29" x="2241" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-17">O(|\mathcal{C}|)</script>.</p><h5><a name='header-n216' class='md-header-anchor '></a>Graph Construction</h5><ul><li><p>Word Embedding: We train word embedding for text data by Google&#39;s word2vec tool with negative sampling, the time complexity is <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-14-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="10.849ex" height="2.614ex" viewBox="0 -821.4 4671 1125.3" role="img" focusable="false" style="vertical-align: -0.706ex;"><defs><path stroke-width="0" id="E14-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E14-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E14-MJMATHI-6C" d="M117 59Q117 26 142 26Q179 26 205 131Q211 151 215 152Q217 153 225 153H229Q238 153 241 153T246 151T248 144Q247 138 245 128T234 90T214 43T183 6T137 -11Q101 -11 70 11T38 85Q38 97 39 102L104 360Q167 615 167 623Q167 626 166 628T162 632T157 634T149 635T141 636T132 637T122 637Q112 637 109 637T101 638T95 641T94 647Q94 649 96 661Q101 680 107 682T179 688Q194 689 213 690T243 693T254 694Q266 694 266 686Q266 675 193 386T118 83Q118 81 118 75T117 65V59Z"></path><path stroke-width="0" id="E14-MJMATHI-6F" d="M201 -11Q126 -11 80 38T34 156Q34 221 64 279T146 380Q222 441 301 441Q333 441 341 440Q354 437 367 433T402 417T438 387T464 338T476 268Q476 161 390 75T201 -11ZM121 120Q121 70 147 48T206 26Q250 26 289 58T351 142Q360 163 374 216T388 308Q388 352 370 375Q346 405 306 405Q243 405 195 347Q158 303 140 230T121 120Z"></path><path stroke-width="0" id="E14-MJMATHI-67" d="M311 43Q296 30 267 15T206 0Q143 0 105 45T66 160Q66 265 143 353T314 442Q361 442 401 394L404 398Q406 401 409 404T418 412T431 419T447 422Q461 422 470 413T480 394Q480 379 423 152T363 -80Q345 -134 286 -169T151 -205Q10 -205 10 -137Q10 -111 28 -91T74 -71Q89 -71 102 -80T116 -111Q116 -121 114 -130T107 -144T99 -154T92 -162L90 -164H91Q101 -167 151 -167Q189 -167 211 -155Q234 -144 254 -122T282 -75Q288 -56 298 -13Q311 35 311 43ZM384 328L380 339Q377 350 375 354T369 368T359 382T346 393T328 402T306 405Q262 405 221 352Q191 313 171 233T151 117Q151 38 213 38Q269 38 323 108L331 118L384 328Z"></path><path stroke-width="0" id="E14-MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path><path stroke-width="0" id="E14-MJCAL-43" d="M201 -25Q167 -25 136 -14T75 23T29 94T12 202Q12 290 50 394T161 574Q227 642 303 673T433 704Q435 705 457 705Q533 701 533 640Q533 606 507 548T464 474Q431 444 396 444Q381 444 381 453Q381 459 388 473T407 513T428 563Q433 580 433 594Q433 636 381 636Q314 636 260 594T175 489T128 363T112 247Q112 157 153 101T273 44Q347 44 398 121Q413 144 437 157T481 171Q496 171 496 160Q496 150 476 123Q426 56 350 16T201 -25Z"></path><path stroke-width="0" id="E14-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E14-MJMATHI-4F" x="0" y="0"></use><use xlink:href="#E14-MJMAIN-28" x="763" y="0"></use><use xlink:href="#E14-MJMATHI-6C" x="1152" y="0"></use><use xlink:href="#E14-MJMATHI-6F" x="1450" y="0"></use><use xlink:href="#E14-MJMATHI-67" x="1935" y="0"></use><use xlink:href="#E14-MJMAIN-28" x="2415" y="0"></use><use xlink:href="#E14-MJMAIN-7C" x="2804" y="0"></use><use xlink:href="#E14-MJCAL-43" x="3082" y="0"></use><use xlink:href="#E14-MJMAIN-7C" x="3615" y="0"></use><use xlink:href="#E14-MJMAIN-29" x="3893" y="0"></use><use xlink:href="#E14-MJMAIN-29" x="4282" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-14">O(log(|\mathcal{C}|))</script>.</p></li><li><p>Image Embedding: We use pre-trained VGG-19 to extract features of images, with  the parallel computing platform like CUDA, the time complexity is <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-15-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="6.362ex" height="2.614ex" viewBox="0 -821.4 2739 1125.3" role="img" focusable="false" style="vertical-align: -0.706ex;"><defs><path stroke-width="0" id="E15-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E15-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E15-MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path><path stroke-width="0" id="E15-MJCAL-49" d="M174 0H31Q-13 0 -21 2T-30 12Q-30 23 -17 36Q9 60 42 68L155 70Q187 102 214 179T257 333T302 491T366 610L369 614H305Q221 611 188 607T145 596T128 569Q119 543 94 529T47 512Q28 512 28 524Q28 527 32 539Q56 614 159 654Q218 678 312 682Q314 682 339 682T404 682T481 683H632Q642 678 642 671Q642 657 621 641T577 617Q570 615 507 614H444Q427 592 406 542Q382 478 355 366T310 209Q280 123 238 78L230 69H330Q442 70 442 74Q443 74 443 77T447 87T460 105Q490 134 527 137Q545 137 545 125Q545 120 542 112Q531 78 491 49T399 7Q379 2 360 2T174 0Z"></path><path stroke-width="0" id="E15-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E15-MJMATHI-4F" x="0" y="0"></use><use xlink:href="#E15-MJMAIN-28" x="763" y="0"></use><use xlink:href="#E15-MJMAIN-7C" x="1152" y="0"></use><use xlink:href="#E15-MJCAL-49" x="1430" y="0"></use><use xlink:href="#E15-MJMAIN-7C" x="2072" y="0"></use><use xlink:href="#E15-MJMAIN-29" x="2350" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-15">O(|\mathcal{I}|)</script>, where the <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-16-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.782ex" height="2.614ex" viewBox="0 -821.4 1198 1125.3" role="img" focusable="false" style="vertical-align: -0.706ex;"><defs><path stroke-width="0" id="E16-MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path><path stroke-width="0" id="E16-MJCAL-49" d="M174 0H31Q-13 0 -21 2T-30 12Q-30 23 -17 36Q9 60 42 68L155 70Q187 102 214 179T257 333T302 491T366 610L369 614H305Q221 611 188 607T145 596T128 569Q119 543 94 529T47 512Q28 512 28 524Q28 527 32 539Q56 614 159 654Q218 678 312 682Q314 682 339 682T404 682T481 683H632Q642 678 642 671Q642 657 621 641T577 617Q570 615 507 614H444Q427 592 406 542Q382 478 355 366T310 209Q280 123 238 78L230 69H330Q442 70 442 74Q443 74 443 77T447 87T460 105Q490 134 527 137Q545 137 545 125Q545 120 542 112Q531 78 491 49T399 7Q379 2 360 2T174 0Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E16-MJMAIN-7C" x="0" y="0"></use><use xlink:href="#E16-MJCAL-49" x="278" y="0"></use><use xlink:href="#E16-MJMAIN-7C" x="920" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-16">|\mathcal{I}|</script> is the size of images set.</p></li><li><p>Build graph: </p><ul><li>The multimodal content-based graph (MCG) can be constructed in linear time complexity <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-17-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="6.108ex" height="2.614ex" viewBox="0 -821.4 2630 1125.3" role="img" focusable="false" style="vertical-align: -0.706ex;"><defs><path stroke-width="0" id="E17-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E17-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E17-MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path><path stroke-width="0" id="E17-MJCAL-43" d="M201 -25Q167 -25 136 -14T75 23T29 94T12 202Q12 290 50 394T161 574Q227 642 303 673T433 704Q435 705 457 705Q533 701 533 640Q533 606 507 548T464 474Q431 444 396 444Q381 444 381 453Q381 459 388 473T407 513T428 563Q433 580 433 594Q433 636 381 636Q314 636 260 594T175 489T128 363T112 247Q112 157 153 101T273 44Q347 44 398 121Q413 144 437 157T481 171Q496 171 496 160Q496 150 476 123Q426 56 350 16T201 -25Z"></path><path stroke-width="0" id="E17-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E17-MJMATHI-4F" x="0" y="0"></use><use xlink:href="#E17-MJMAIN-28" x="763" y="0"></use><use xlink:href="#E17-MJMAIN-7C" x="1152" y="0"></use><use xlink:href="#E17-MJCAL-43" x="1430" y="0"></use><use xlink:href="#E17-MJMAIN-7C" x="1963" y="0"></use><use xlink:href="#E17-MJMAIN-29" x="2241" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-17">O(|\mathcal{C}|)</script>. </li><li>The co-occurrence context-based graph (CCG) is derived from MCG by traversing the <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-18-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="2.357ex" height="2.213ex" viewBox="0 -735.2 1014.6 952.8" role="img" focusable="false" style="vertical-align: -0.505ex;"><defs><path stroke-width="0" id="E18-MJMATHI-56" d="M52 648Q52 670 65 683H76Q118 680 181 680Q299 680 320 683H330Q336 677 336 674T334 656Q329 641 325 637H304Q282 635 274 635Q245 630 242 620Q242 618 271 369T301 118L374 235Q447 352 520 471T595 594Q599 601 599 609Q599 633 555 637Q537 637 537 648Q537 649 539 661Q542 675 545 679T558 683Q560 683 570 683T604 682T668 681Q737 681 755 683H762Q769 676 769 672Q769 655 760 640Q757 637 743 637Q730 636 719 635T698 630T682 623T670 615T660 608T652 599T645 592L452 282Q272 -9 266 -16Q263 -18 259 -21L241 -22H234Q216 -22 216 -15Q213 -9 177 305Q139 623 138 626Q133 637 76 637H59Q52 642 52 648Z"></path><path stroke-width="0" id="E18-MJMATHI-73" d="M131 289Q131 321 147 354T203 415T300 442Q362 442 390 415T419 355Q419 323 402 308T364 292Q351 292 340 300T328 326Q328 342 337 354T354 372T367 378Q368 378 368 379Q368 382 361 388T336 399T297 405Q249 405 227 379T204 326Q204 301 223 291T278 274T330 259Q396 230 396 163Q396 135 385 107T352 51T289 7T195 -10Q118 -10 86 19T53 87Q53 126 74 143T118 160Q133 160 146 151T160 120Q160 94 142 76T111 58Q109 57 108 57T107 55Q108 52 115 47T146 34T201 27Q237 27 263 38T301 66T318 97T323 122Q323 150 302 164T254 181T195 196T148 231Q131 256 131 289Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E18-MJMATHI-56" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E18-MJMATHI-73" x="824" y="-213"></use></g></svg></span><script type="math/tex" id="MathJax-Element-18">V_s</script> node, so this step is linear to the size of concept <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-19-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="5.853ex" height="2.714ex" viewBox="0 -864.5 2520 1168.4" role="img" focusable="false" style="vertical-align: -0.706ex;"><defs><path stroke-width="0" id="E19-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E19-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E19-MJCAL-4E" d="M343 705Q358 705 358 698Q360 696 370 658T411 524T484 319Q536 174 590 82L595 73L615 152Q646 274 683 407Q729 571 752 637T799 727Q852 780 937 788Q939 788 947 788T958 789H962Q979 789 979 765Q979 722 951 692Q942 683 924 683Q888 681 859 672T818 654T803 639Q784 608 708 322T631 15Q631 14 630 15Q630 17 629 15Q628 14 628 12Q621 -4 601 -17T560 -31Q550 -31 546 -28T530 -7Q484 67 458 123T398 272Q352 392 314 514L306 535V534Q306 533 296 488T272 379T234 239T185 100T127 -7T61 -50Q34 -50 4 -34T-27 8Q-27 33 -12 61T18 90Q21 90 36 77T87 57H92Q109 57 123 78T162 173Q206 299 232 417T265 599T276 667Q284 681 304 693T343 705Z"></path><path stroke-width="0" id="E19-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E19-MJMATHI-4F" x="0" y="0"></use><use xlink:href="#E19-MJMAIN-28" x="763" y="0"></use><use xlink:href="#E19-MJCAL-4E" x="1152" y="0"></use><use xlink:href="#E19-MJMAIN-29" x="2131" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-19">O(\mathcal{N})</script>.</li></ul></li><li><p>Graph Feature Extraction: MCG and CCG Features including similarities, importance, and entropy which computed pair-wisely, so the time complexity is <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-20-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="8.198ex" height="2.714ex" viewBox="0 -864.5 3529.6 1168.4" role="img" focusable="false" style="vertical-align: -0.706ex;"><defs><path stroke-width="0" id="E20-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E20-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E20-MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path><path stroke-width="0" id="E20-MJCAL-4E" d="M343 705Q358 705 358 698Q360 696 370 658T411 524T484 319Q536 174 590 82L595 73L615 152Q646 274 683 407Q729 571 752 637T799 727Q852 780 937 788Q939 788 947 788T958 789H962Q979 789 979 765Q979 722 951 692Q942 683 924 683Q888 681 859 672T818 654T803 639Q784 608 708 322T631 15Q631 14 630 15Q630 17 629 15Q628 14 628 12Q621 -4 601 -17T560 -31Q550 -31 546 -28T530 -7Q484 67 458 123T398 272Q352 392 314 514L306 535V534Q306 533 296 488T272 379T234 239T185 100T127 -7T61 -50Q34 -50 4 -34T-27 8Q-27 33 -12 61T18 90Q21 90 36 77T87 57H92Q109 57 123 78T162 173Q206 299 232 417T265 599T276 667Q284 681 304 693T343 705Z"></path><path stroke-width="0" id="E20-MJCAL-32" d="M55 334Q55 386 105 419T236 453Q333 453 390 413T448 307Q448 278 437 256T406 218T365 193T318 172T277 151L248 134Q219 118 191 102T163 84T267 83L382 85H391Q399 99 406 126Q410 143 413 145T429 148Q440 148 442 147T449 139Q449 137 435 73T420 7Q420 6 414 0H233Q94 0 71 0T46 5Q46 5 46 6Q44 8 44 24Q44 39 46 41Q47 44 98 78T212 155T294 212Q347 257 347 304Q347 354 306 380T203 407Q150 407 120 377Q118 375 123 373Q146 362 146 332Q146 315 133 302T101 288Q85 288 70 298T55 334Z"></path><path stroke-width="0" id="E20-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E20-MJMATHI-4F" x="0" y="0"></use><use xlink:href="#E20-MJMAIN-28" x="763" y="0"></use><g transform="translate(1152,0)"><use xlink:href="#E20-MJMAIN-7C" x="0" y="0"></use><use xlink:href="#E20-MJCAL-4E" x="278" y="0"></use><g transform="translate(1257,0)"><use xlink:href="#E20-MJMAIN-7C" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E20-MJCAL-32" x="393" y="674"></use></g></g><use xlink:href="#E20-MJMAIN-29" x="3140" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-20">O(\mathcal{|N|^2})</script></p></li></ul><p>So the total graph construction costs <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-31-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="17.145ex" height="3.014ex" viewBox="0 -993.9 7382 1297.8" role="img" focusable="false" style="vertical-align: -0.706ex;"><defs><path stroke-width="0" id="E31-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E31-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E31-MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path><path stroke-width="0" id="E31-MJCAL-43" d="M201 -25Q167 -25 136 -14T75 23T29 94T12 202Q12 290 50 394T161 574Q227 642 303 673T433 704Q435 705 457 705Q533 701 533 640Q533 606 507 548T464 474Q431 444 396 444Q381 444 381 453Q381 459 388 473T407 513T428 563Q433 580 433 594Q433 636 381 636Q314 636 260 594T175 489T128 363T112 247Q112 157 153 101T273 44Q347 44 398 121Q413 144 437 157T481 171Q496 171 496 160Q496 150 476 123Q426 56 350 16T201 -25Z"></path><path stroke-width="0" id="E31-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path stroke-width="0" id="E31-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path stroke-width="0" id="E31-MJCAL-4E" d="M343 705Q358 705 358 698Q360 696 370 658T411 524T484 319Q536 174 590 82L595 73L615 152Q646 274 683 407Q729 571 752 637T799 727Q852 780 937 788Q939 788 947 788T958 789H962Q979 789 979 765Q979 722 951 692Q942 683 924 683Q888 681 859 672T818 654T803 639Q784 608 708 322T631 15Q631 14 630 15Q630 17 629 15Q628 14 628 12Q621 -4 601 -17T560 -31Q550 -31 546 -28T530 -7Q484 67 458 123T398 272Q352 392 314 514L306 535V534Q306 533 296 488T272 379T234 239T185 100T127 -7T61 -50Q34 -50 4 -34T-27 8Q-27 33 -12 61T18 90Q21 90 36 77T87 57H92Q109 57 123 78T162 173Q206 299 232 417T265 599T276 667Q284 681 304 693T343 705Z"></path><path stroke-width="0" id="E31-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E31-MJMATHI-4F" x="0" y="0"></use><use xlink:href="#E31-MJMAIN-28" x="763" y="0"></use><use xlink:href="#E31-MJMAIN-7C" x="1152" y="0"></use><use xlink:href="#E31-MJCAL-43" x="1430" y="0"></use><use xlink:href="#E31-MJMAIN-7C" x="1963" y="0"></use><use xlink:href="#E31-MJMAIN-29" x="2241" y="0"></use><use xlink:href="#E31-MJMAIN-2B" x="2852" y="0"></use><use xlink:href="#E31-MJMATHI-4F" x="3852" y="0"></use><use xlink:href="#E31-MJMAIN-28" x="4615" y="0"></use><use xlink:href="#E31-MJMAIN-7C" x="5004" y="0"></use><use xlink:href="#E31-MJCAL-4E" x="5282" y="0"></use><g transform="translate(6261,0)"><use xlink:href="#E31-MJMAIN-7C" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E31-MJMAIN-32" x="393" y="674"></use></g><use xlink:href="#E31-MJMAIN-29" x="6992" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-31">O(|\mathcal{C}|) + O(|\mathcal{N}|^2)</script></p><h5><a name='header-n258' class='md-header-anchor '></a>Variation Deep Graph Embedding and Clustering</h5><ul><li>VAE: The encoder and decoder of  VAE are three layers fully connected feed forward neural network (N-&gt;5000-&gt;2000-&gt;300), the time complexity is <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-22-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="58.246ex" height="3.114ex" viewBox="0 -1037.1 25078.1 1340.9" role="img" focusable="false" style="vertical-align: -0.706ex;"><defs><path stroke-width="0" id="E22-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E22-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E22-MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path><path stroke-width="0" id="E22-MJCAL-4E" d="M343 705Q358 705 358 698Q360 696 370 658T411 524T484 319Q536 174 590 82L595 73L615 152Q646 274 683 407Q729 571 752 637T799 727Q852 780 937 788Q939 788 947 788T958 789H962Q979 789 979 765Q979 722 951 692Q942 683 924 683Q888 681 859 672T818 654T803 639Q784 608 708 322T631 15Q631 14 630 15Q630 17 629 15Q628 14 628 12Q621 -4 601 -17T560 -31Q550 -31 546 -28T530 -7Q484 67 458 123T398 272Q352 392 314 514L306 535V534Q306 533 296 488T272 379T234 239T185 100T127 -7T61 -50Q34 -50 4 -34T-27 8Q-27 33 -12 61T18 90Q21 90 36 77T87 57H92Q109 57 123 78T162 173Q206 299 232 417T265 599T276 667Q284 681 304 693T343 705Z"></path><path stroke-width="0" id="E22-MJMAIN-35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path><path stroke-width="0" id="E22-MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path stroke-width="0" id="E22-MJMAIN-2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"></path><path stroke-width="0" id="E22-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path stroke-width="0" id="E22-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path stroke-width="0" id="E22-MJMAIN-33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path><path stroke-width="0" id="E22-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path stroke-width="0" id="E22-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E22-MJMATHI-4F" x="0" y="0"></use><use xlink:href="#E22-MJMAIN-28" x="763" y="0"></use><g transform="translate(1152,0)"><use xlink:href="#E22-MJMAIN-7C" x="0" y="0"></use><use xlink:href="#E22-MJCAL-4E" x="278" y="0"></use><use xlink:href="#E22-MJMAIN-7C" x="1257" y="0"></use></g><use xlink:href="#E22-MJMAIN-28" x="2687" y="0"></use><g transform="translate(3076,0)"><use xlink:href="#E22-MJMAIN-35"></use><use xlink:href="#E22-MJMAIN-30" x="500" y="0"></use><use xlink:href="#E22-MJMAIN-30" x="1000" y="0"></use><use xlink:href="#E22-MJMAIN-30" x="1500" y="0"></use></g><use xlink:href="#E22-MJMAIN-2217" x="5298" y="0"></use><g transform="translate(6020,0)"><use xlink:href="#E22-MJMAIN-7C" x="0" y="0"></use><use xlink:href="#E22-MJCAL-4E" x="278" y="0"></use><use xlink:href="#E22-MJMAIN-7C" x="1257" y="0"></use></g><use xlink:href="#E22-MJMAIN-2B" x="7777" y="0"></use><g transform="translate(8777,0)"><use xlink:href="#E22-MJMAIN-35"></use><use xlink:href="#E22-MJMAIN-30" x="500" y="0"></use><use xlink:href="#E22-MJMAIN-30" x="1000" y="0"></use><use xlink:href="#E22-MJMAIN-30" x="1500" y="0"></use></g><use xlink:href="#E22-MJMAIN-2217" x="11000" y="0"></use><g transform="translate(11722,0)"><use xlink:href="#E22-MJMAIN-32"></use><use xlink:href="#E22-MJMAIN-30" x="500" y="0"></use><use xlink:href="#E22-MJMAIN-30" x="1000" y="0"></use><use xlink:href="#E22-MJMAIN-30" x="1500" y="0"></use></g><use xlink:href="#E22-MJMAIN-2B" x="13944" y="0"></use><g transform="translate(14944,0)"><use xlink:href="#E22-MJMAIN-32"></use><use xlink:href="#E22-MJMAIN-30" x="500" y="0"></use><use xlink:href="#E22-MJMAIN-30" x="1000" y="0"></use><use xlink:href="#E22-MJMAIN-30" x="1500" y="0"></use></g><use xlink:href="#E22-MJMAIN-2217" x="17167" y="0"></use><g transform="translate(17889,0)"><use xlink:href="#E22-MJMAIN-33"></use><use xlink:href="#E22-MJMAIN-30" x="500" y="0"></use><use xlink:href="#E22-MJMAIN-30" x="1000" y="0"></use></g><use xlink:href="#E22-MJMAIN-29" x="19389" y="0"></use><use xlink:href="#E22-MJMAIN-29" x="19778" y="0"></use><use xlink:href="#E22-MJMAIN-3D" x="20445" y="0"></use><use xlink:href="#E22-MJMATHI-4F" x="21500" y="0"></use><use xlink:href="#E22-MJMAIN-28" x="22263" y="0"></use><use xlink:href="#E22-MJMAIN-7C" x="22652" y="0"></use><g transform="translate(22930,0)"><use xlink:href="#E22-MJCAL-4E" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E22-MJMAIN-32" x="1452" y="729"></use></g><use xlink:href="#E22-MJMAIN-7C" x="24411" y="0"></use><use xlink:href="#E22-MJMAIN-29" x="24689" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-22">O(\mathcal{|N|}(5000 * \mathcal{|N|} + 5000*2000 + 2000*300)) = O(|\mathcal{N}^2|)</script> </li><li>GMM: The time complexity is <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-23-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="13.543ex" height="2.714ex" viewBox="0 -864.5 5830.9 1168.4" role="img" focusable="false" style="vertical-align: -0.706ex;"><defs><path stroke-width="0" id="E23-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E23-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E23-MJMATHI-69" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path><path stroke-width="0" id="E23-MJMAIN-2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"></path><path stroke-width="0" id="E23-MJMATHI-6B" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"></path><path stroke-width="0" id="E23-MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path><path stroke-width="0" id="E23-MJCAL-4E" d="M343 705Q358 705 358 698Q360 696 370 658T411 524T484 319Q536 174 590 82L595 73L615 152Q646 274 683 407Q729 571 752 637T799 727Q852 780 937 788Q939 788 947 788T958 789H962Q979 789 979 765Q979 722 951 692Q942 683 924 683Q888 681 859 672T818 654T803 639Q784 608 708 322T631 15Q631 14 630 15Q630 17 629 15Q628 14 628 12Q621 -4 601 -17T560 -31Q550 -31 546 -28T530 -7Q484 67 458 123T398 272Q352 392 314 514L306 535V534Q306 533 296 488T272 379T234 239T185 100T127 -7T61 -50Q34 -50 4 -34T-27 8Q-27 33 -12 61T18 90Q21 90 36 77T87 57H92Q109 57 123 78T162 173Q206 299 232 417T265 599T276 667Q284 681 304 693T343 705Z"></path><path stroke-width="0" id="E23-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E23-MJMATHI-4F" x="0" y="0"></use><use xlink:href="#E23-MJMAIN-28" x="763" y="0"></use><use xlink:href="#E23-MJMATHI-69" x="1152" y="0"></use><use xlink:href="#E23-MJMAIN-2217" x="1719" y="0"></use><use xlink:href="#E23-MJMATHI-6B" x="2441" y="0"></use><use xlink:href="#E23-MJMAIN-2217" x="3184" y="0"></use><g transform="translate(3906,0)"><use xlink:href="#E23-MJMAIN-7C" x="0" y="0"></use><use xlink:href="#E23-MJCAL-4E" x="278" y="0"></use><use xlink:href="#E23-MJMAIN-7C" x="1257" y="0"></use></g><use xlink:href="#E23-MJMAIN-29" x="5441" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-23">O(i * k * \mathcal{|N|})</script>, where i is the number of iterations, <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-24-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1.21ex" height="2.013ex" viewBox="0 -778.3 521 866.5" role="img" focusable="false" style="vertical-align: -0.205ex;"><defs><path stroke-width="0" id="E24-MJMATHI-6B" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E24-MJMATHI-6B" x="0" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-24">k</script> is the compontent number of GMM, the final time complexity is <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-25-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="7.144ex" height="2.714ex" viewBox="0 -864.5 3076 1168.4" role="img" focusable="false" style="vertical-align: -0.706ex;"><defs><path stroke-width="0" id="E25-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E25-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E25-MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path><path stroke-width="0" id="E25-MJCAL-4E" d="M343 705Q358 705 358 698Q360 696 370 658T411 524T484 319Q536 174 590 82L595 73L615 152Q646 274 683 407Q729 571 752 637T799 727Q852 780 937 788Q939 788 947 788T958 789H962Q979 789 979 765Q979 722 951 692Q942 683 924 683Q888 681 859 672T818 654T803 639Q784 608 708 322T631 15Q631 14 630 15Q630 17 629 15Q628 14 628 12Q621 -4 601 -17T560 -31Q550 -31 546 -28T530 -7Q484 67 458 123T398 272Q352 392 314 514L306 535V534Q306 533 296 488T272 379T234 239T185 100T127 -7T61 -50Q34 -50 4 -34T-27 8Q-27 33 -12 61T18 90Q21 90 36 77T87 57H92Q109 57 123 78T162 173Q206 299 232 417T265 599T276 667Q284 681 304 693T343 705Z"></path><path stroke-width="0" id="E25-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E25-MJMATHI-4F" x="0" y="0"></use><use xlink:href="#E25-MJMAIN-28" x="763" y="0"></use><g transform="translate(1152,0)"><use xlink:href="#E25-MJMAIN-7C" x="0" y="0"></use><use xlink:href="#E25-MJCAL-4E" x="278" y="0"></use><use xlink:href="#E25-MJMAIN-7C" x="1257" y="0"></use></g><use xlink:href="#E25-MJMAIN-29" x="2687" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-25">O(\mathcal{|N|})</script>, as <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-26-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="3.044ex" height="2.413ex" viewBox="0 -778.3 1310.7 1039.1" role="img" focusable="false" style="vertical-align: -0.606ex;"><defs><path stroke-width="0" id="E26-MJMATHI-69" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path><path stroke-width="0" id="E26-MJMAIN-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path><path stroke-width="0" id="E26-MJMATHI-6B" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E26-MJMATHI-69" x="0" y="0"></use><use xlink:href="#E26-MJMAIN-2C" x="345" y="0"></use><use xlink:href="#E26-MJMATHI-6B" x="789" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-26">i, k</script> can be treated as small constant.</li></ul><ul><li>Fusion: We compute the KL divergence for every two K-compontents GMM, and  the KL of two Gaussian distribution costs  <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-27-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="6.505ex" height="3.014ex" viewBox="0 -907.7 2800.7 1297.8" role="img" focusable="false" style="vertical-align: -0.906ex;"><defs><path stroke-width="0" id="E27-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E27-MJMATHI-64" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path><path stroke-width="0" id="E27-MJMAIN-33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path><path stroke-width="0" id="E27-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E27-MJMATHI-4F" x="0" y="0"></use><g transform="translate(763,0)"><text font-family="STIXGeneral,'Arial Unicode MS',serif" stroke="none" transform="scale(43.127) matrix(1 0 0 -1 0 0)">（</text></g><g transform="translate(1434,0)"><use xlink:href="#E27-MJMATHI-64" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E27-MJMAIN-33" x="740" y="513"></use></g><use xlink:href="#E27-MJMAIN-29" x="2411" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-27">O（d^3)</script> , so the time complexity of merge operation is <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-28-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="8.113ex" height="2.814ex" viewBox="0 -907.7 3493.1 1211.6" role="img" focusable="false" style="vertical-align: -0.706ex;"><defs><path stroke-width="0" id="E28-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E28-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E28-MJMATHI-6B" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"></path><path stroke-width="0" id="E28-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path stroke-width="0" id="E28-MJMATHI-64" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path><path stroke-width="0" id="E28-MJMAIN-33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path><path stroke-width="0" id="E28-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E28-MJMATHI-4F" x="0" y="0"></use><use xlink:href="#E28-MJMAIN-28" x="763" y="0"></use><g transform="translate(1152,0)"><use xlink:href="#E28-MJMATHI-6B" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E28-MJMAIN-32" x="736" y="513"></use></g><g transform="translate(2126,0)"><use xlink:href="#E28-MJMATHI-64" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E28-MJMAIN-33" x="740" y="513"></use></g><use xlink:href="#E28-MJMAIN-29" x="3104" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-28">O(k^2d^3)</script>, as <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-29-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="3.458ex" height="2.413ex" viewBox="0 -778.3 1488.7 1039.1" role="img" focusable="false" style="vertical-align: -0.606ex;"><defs><path stroke-width="0" id="E29-MJMATHI-6B" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"></path><path stroke-width="0" id="E29-MJMAIN-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path><path stroke-width="0" id="E29-MJMATHI-64" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E29-MJMATHI-6B" x="0" y="0"></use><use xlink:href="#E29-MJMAIN-2C" x="521" y="0"></use><use xlink:href="#E29-MJMATHI-64" x="965" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-29">k, d</script> is small constant, the could be a constant time.</li></ul><p>So the tital variation deep graph embedding and clustering cost <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-30-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="8.198ex" height="3.114ex" viewBox="0 -1037.1 3529.6 1340.9" role="img" focusable="false" style="vertical-align: -0.706ex;"><defs><path stroke-width="0" id="E30-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E30-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E30-MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path><path stroke-width="0" id="E30-MJCAL-4E" d="M343 705Q358 705 358 698Q360 696 370 658T411 524T484 319Q536 174 590 82L595 73L615 152Q646 274 683 407Q729 571 752 637T799 727Q852 780 937 788Q939 788 947 788T958 789H962Q979 789 979 765Q979 722 951 692Q942 683 924 683Q888 681 859 672T818 654T803 639Q784 608 708 322T631 15Q631 14 630 15Q630 17 629 15Q628 14 628 12Q621 -4 601 -17T560 -31Q550 -31 546 -28T530 -7Q484 67 458 123T398 272Q352 392 314 514L306 535V534Q306 533 296 488T272 379T234 239T185 100T127 -7T61 -50Q34 -50 4 -34T-27 8Q-27 33 -12 61T18 90Q21 90 36 77T87 57H92Q109 57 123 78T162 173Q206 299 232 417T265 599T276 667Q284 681 304 693T343 705Z"></path><path stroke-width="0" id="E30-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path stroke-width="0" id="E30-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E30-MJMATHI-4F" x="0" y="0"></use><use xlink:href="#E30-MJMAIN-28" x="763" y="0"></use><g transform="translate(1152,0)"><use xlink:href="#E30-MJMAIN-7C" x="0" y="0"></use><use xlink:href="#E30-MJCAL-4E" x="278" y="0"></use><use xlink:href="#E30-MJMAIN-7C" x="1257" y="0"></use><use transform="scale(0.707)" xlink:href="#E30-MJMAIN-32" x="2170" y="729"></use></g><use xlink:href="#E30-MJMAIN-29" x="3140" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-30">O(\mathcal{|N|}^2)</script></p><h5><a name='header-n429' class='md-header-anchor '></a>The whole VDGEC</h5><p>the total time complexity is <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-31-Frame" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="17.145ex" height="3.014ex" viewBox="0 -993.9 7382 1297.8" role="img" focusable="false" style="vertical-align: -0.706ex;"><defs><path stroke-width="0" id="E31-MJMATHI-4F" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path stroke-width="0" id="E31-MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="0" id="E31-MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path><path stroke-width="0" id="E31-MJCAL-43" d="M201 -25Q167 -25 136 -14T75 23T29 94T12 202Q12 290 50 394T161 574Q227 642 303 673T433 704Q435 705 457 705Q533 701 533 640Q533 606 507 548T464 474Q431 444 396 444Q381 444 381 453Q381 459 388 473T407 513T428 563Q433 580 433 594Q433 636 381 636Q314 636 260 594T175 489T128 363T112 247Q112 157 153 101T273 44Q347 44 398 121Q413 144 437 157T481 171Q496 171 496 160Q496 150 476 123Q426 56 350 16T201 -25Z"></path><path stroke-width="0" id="E31-MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path stroke-width="0" id="E31-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path stroke-width="0" id="E31-MJCAL-4E" d="M343 705Q358 705 358 698Q360 696 370 658T411 524T484 319Q536 174 590 82L595 73L615 152Q646 274 683 407Q729 571 752 637T799 727Q852 780 937 788Q939 788 947 788T958 789H962Q979 789 979 765Q979 722 951 692Q942 683 924 683Q888 681 859 672T818 654T803 639Q784 608 708 322T631 15Q631 14 630 15Q630 17 629 15Q628 14 628 12Q621 -4 601 -17T560 -31Q550 -31 546 -28T530 -7Q484 67 458 123T398 272Q352 392 314 514L306 535V534Q306 533 296 488T272 379T234 239T185 100T127 -7T61 -50Q34 -50 4 -34T-27 8Q-27 33 -12 61T18 90Q21 90 36 77T87 57H92Q109 57 123 78T162 173Q206 299 232 417T265 599T276 667Q284 681 304 693T343 705Z"></path><path stroke-width="0" id="E31-MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#E31-MJMATHI-4F" x="0" y="0"></use><use xlink:href="#E31-MJMAIN-28" x="763" y="0"></use><use xlink:href="#E31-MJMAIN-7C" x="1152" y="0"></use><use xlink:href="#E31-MJCAL-43" x="1430" y="0"></use><use xlink:href="#E31-MJMAIN-7C" x="1963" y="0"></use><use xlink:href="#E31-MJMAIN-29" x="2241" y="0"></use><use xlink:href="#E31-MJMAIN-2B" x="2852" y="0"></use><use xlink:href="#E31-MJMATHI-4F" x="3852" y="0"></use><use xlink:href="#E31-MJMAIN-28" x="4615" y="0"></use><use xlink:href="#E31-MJMAIN-7C" x="5004" y="0"></use><use xlink:href="#E31-MJCAL-4E" x="5282" y="0"></use><g transform="translate(6261,0)"><use xlink:href="#E31-MJMAIN-7C" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E31-MJMAIN-32" x="393" y="674"></use></g><use xlink:href="#E31-MJMAIN-29" x="6992" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-31">O(|\mathcal{C}|) + O(|\mathcal{N}|^2)</script></p><p>&nbsp;</p></div>
+</body>
+</html>

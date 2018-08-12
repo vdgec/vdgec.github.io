@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>VDGEC Demo and Dataset</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <link href="./css/demo.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+    <header class="blog-header py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+            <div class="col-12 text-center">
+                <a class="blog-header-logo text-dark" href="#">Learning Multimodal Taxonomy via Variational Deep Graph
+                    Embedding and Clustering</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="#introduction">Introduction</a>
+            <a class="p-2 text-muted" href="#task">Task</a>
+            <a class="p-2 text-muted" href="#framework">Framework</a>
+            <a class="p-2 text-muted" href="#dataset">Dataset</a>
+            <a class="p-2 text-muted" href="#appendix">Appendix</a>
+        </nav>
+    </div>
+
+    <div class="jumbotron p-3 p-md-5  rounded  row" id="introduction">
+        <div class="col-md-6">
+            <h2 class="display-10 font-italic">Introduction</h2>
+            <p class="my-2">Taxonomy learning is an important problem and facilitates various applications such as
+                semantic understanding and information retrieval. Previous work for building semantic taxonomies has
+                primarily relied on labor-intensive human contributions or focused on text-based extraction. In this
+                paper, we investigate the problem of automatically learning multimodal taxonomies from the multimedia
+                data on the Web. A systematic framework called Variational Deep Graph Embedding and Clustering (VDGEC)
+                is proposed consisting of two stages as concept graph construction and taxonomy induction via
+                variational deep graph embedding and clustering. VDGEC discovers hierarchical concept relationships by
+                exploiting the semantic textual-visual correspondences and contextual co-occurrences in an unsupervised
+                manner. The unstructured semantics and noisy issues of multimedia documents are carefully addressed by
+                VDGEC for high quality taxonomy induction.We conduct extensive experiments on the real-world datasets.
+                Experimental results demonstrate the effectiveness of the proposed framework, where VDGEC outperforms
+                previous unsupervised approaches by a large gap.</p>
+        </div>
+        <div class="col-md-6 ">
+            <figure class="figure align-middle" style="margin-top: 100px;">
+                <img src="http://p57mvlyrw.bkt.clouddn.com/result.png/none" class="figure-img img-fluid ">
+                <figcaption class="figure-caption">Part of taxonomy in Food (a), Environment (b), and Zhuanzhi (c).
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+
+</div>
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-12 blog-main" id="task">
+            <h3 class="pb-3 mb-4 font-italic border-bottom">
+                Task
+            </h3>
+            <div>
+                <p>We investigate the problem of automatically learning multimodal taxonomies from the multimedia data
+                    on the Web.</p>
+                <figure class="figure align-middle">
+                    <img src="http://p57mvlyrw.bkt.clouddn.com/example.png/none" class="figure-img img-fluid ">
+                    <figcaption class="figure-caption">A example of building taxonomy from blogs</figcaption>
+                </figure>
+
+            </div>
+            <h3 class="pb-3 mb-4 font-italic border-bottom" style="margin-top: 20px;" id="framework">
+                Framework
+            </h3>
+            <figure class="figure align-middle">
+
+                <img src="http://p57mvlyrw.bkt.clouddn.com/framework.png/none" class="figure-img img-fluid ">
+                <figcaption class="figure-caption">The framework of VDGEC. First, VDGEC automatically extracts concepts,
+                    then builds multimodal content-based graph and co-occurrence context-based graph to capture the
+                    multimodal features of concepts. Subsequently, VDGEC derives the taxonomy by variational deep graph
+                    embedding and clustering
+                </figcaption>
+            </figure>
+
+            <h3 class="pb-3 mb-4 font-italic border-bottom" style="margin-top: 20px;" id="dataset">
+                Dataset
+            </h3>
+            <p><a href="http://120.79.142.56/dataset.txt">Dataset</a>  7.23GB</p>
+            Every line is a document in json format as: 
+            <div id="write" class="is-node show-fences-line-number"><pre class="md-fences md-end-block md-fences-with-lineno" lang="javascript"> <div class="CodeMirror cm-s-inner CodeMirror-wrap"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 27.9938px;"></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 24px; margin-bottom: 0px; border-right-width: 30px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div style="position: relative;" class="CodeMirror-activeline"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -24px; width: 24px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -24px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 16px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -24px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">images</span>:[</span></pre></div><div style="position: relative;" class=""><div class="CodeMirror-gutter-wrapper" style="left: -24px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-string">'http://zhuanzhiimg.b0.upaiyun.com/images/wx/9cc43e5bd67854194860257410f94634'</span>,</span></pre></div><div class="" style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -24px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-string">'http://zhuanzhiimg.b0.upaiyun.com/images/wx/8032a0a94cf2f197132490f3b40b5e2c'</span></span></pre></div><div style="position: relative;" class=""><div class="CodeMirror-gutter-wrapper" style="left: -24px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  ],</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -24px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">videos</span>:[],</span></pre></div><div class="" style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -24px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 16px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">content</span>:<span class="cm-string">''</span></span></pre></div><div style="position: relative;" class=""><div class="CodeMirror-gutter-wrapper" style="left: -24px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 16px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; border-bottom: 0px solid transparent; top: 154px;"></div><div class="CodeMirror-gutters" style="height: 184px; left: 0px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 23px;"></div></div></div></div></pre><p></p></div>
+
+            
+            <h3 class="pb-3 mb-4 font-italic border-bottom" style="margin-top: 20px;" id="appendix">
+                Appendix
+            </h3>
+            <ul>
+                <li><a href="concept_extraction.html">How to extract concept</a></li>
+                <li><a href="vdgec.html">How we combine VAE and GMM</a></li>
+                <li><a href="semantic.html">Semantic Embedding</a></li>
+                <li><a href="experiments.html">More experiments</a></li>
+                <li><a href="time_complexity.html">Time Complexity</a></li>
+            </ul>
+        </div><!-- /.blog-main -->
+
+
+    </div><!-- /.row -->
+
+</main><!-- /.container -->
+
+<footer class="blog-footer">
+    <p>VDGEC</p>
+    Last updated on 2018/05/26
+    <p>
+        <a href="#">Back to top</a>
+    </p>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://v4.bootcss.com/assets/js/vendor/popper.min.js"></script>
+<script src="https://v4.bootcss.com/dist/js/bootstrap.min.js"></script>
+<script src="https://v4.bootcss.com/assets/js/vendor/holder.min.js"></script>
+<script>
+    Holder.addTheme('thumb', {
+        bg: '#55595c',
+        fg: '#eceeef',
+        text: 'Thumbnail'
+    });
+</script>
+</body>
+</html>
